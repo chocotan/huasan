@@ -1,6 +1,7 @@
 package io.loli.blog.huasan.entity;
 
 public class Admin {
+	private int id;
 	private String name;
 	private String password;
 	private String email;
@@ -27,5 +28,13 @@ public class Admin {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 }
