@@ -1,1 +1,304 @@
-@charset "UTF-8";body{background-color: #F1F1F1;background-repeat: no-repeat;background-position: top left;background-attachment: fixed;background-size:cover;font-size:95%;color:#505050;}.foot, .main, .links{width: 700px;}.main{padding-top:35px;}.head{margin-top:35px;position:fixed;}.headimg{position: relative;margin-left: 80px;height:150px;width:150px;}.foot{margin-left:245px;width:675px;position:relative;margin-top:20px;padding-bottom:5px;padding-top:5px;}.menu{position: relative;margin-left: 80px;width: 150px;margin-top:10px ;}.info{position: relative;margin-left: 80px;width: 150px;margin-top:10px;}.post{width:675px;position: relative;bottom: 20%;clear: both;margin-left:245px;margin-bottom:10px;overflow: hidden;}.post-content p{margin:7px 0px 7px 0px;}ul{margin: 0;padding: 0;list-style: none;}.head ul{display: block;}.post-data{padding-right: 5px;font-size: 14px;margin-top: 55px;margin-left:20px;}.post-data span{padding-left:5px;color:#999;}.post-content{font-size: 100%;line-height: 23px;position: relative;margin: 20px 20px 25px 20px;}a{color:#888;}a, a:visited, h1 a:visited, a:active, #main .selected .actions a, #main .selected .actions a:link, #main .selected .actions a:visited, #help dt{color: rgba(41, 41, 63, 0.7);text-decoration: none}.menu li{font-size: 18px;text-align: right;padding: 3px 5px;margin: 3px 0 4px 0;text-align: right;height: 24px;}.info li{font-size: 18px;text-align: right;padding: 3px 5px;margin: 3px 0 4px 0;text-align: right;height: 24px;color:rgba(41, 41, 63, 0.7)}.alink li{padding:3px 5px;margin:3px 0 4px 0;text-align: right;}.info ul{padding-left:30px;}.post-title{float: left;margin-left: 20px;height:55px;}.post-author-head{float: right;padding-top: 15px;padding-right: 10px;}.page{margin-bottom:10px;margin-left:245px;width:675px;}.comments{width:675px;margin-left:245px;margin-top:5px;font-size:90%;}.commentList, .page, .post, .headimg, .menu, .info, .newComment, .linkList ,.foot{background:rgba(255,255,255,.80);box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);}.commentContent{margin:0px 1px 5px 1px;word-break: break-all;padding:5px 2px 10px 5px;}.commentHead{float: left;border-right: 1px solid #E6E3D6;padding: 0px 5px 5px 5px;}.child{padding-left:45px;}.commentList{margin:10px 0 10px 0;padding: 5px 5px 0px 2px;}.comment .reply{float:right;}.comment .commentDate{margin-left:10px;color:#999;}.linkList{margin-left: 245px;width: 675px;height: 220px;}.comment .commentContent{padding-left:50px;padding-right:20px;word-break: break-all;}.newComment{padding:2px 2px 2px 10px;}h2{display: block;font-size: 1.4em;}img{max-width: 600px;max-height: 1000px;height: auto;width: auto;}.blogroll{padding: 2px 5px 2px 10px;}.links{padding-top:10px;width:100px;}.brlink{width: 210px;padding-top: 2px;float:left;}.foot img{vertical-align:middle;}.adwords{margin-left: 245px;width:91%;}.zan{padding: 2px 5px 2px 10px;}.info{position: relative;margin-left: 80px;width: 150px;margin-top:10px;}.hitokoto{background: rgba(255, 255, 255, .80);box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);position: relative;margin-left: 80px;width: 150px;margin-top:10px;}.hi{padding: 3px 5px 3px 10px;}.tomo{opacity:.8;}.alink{background: rgba(255, 255, 255, .80);box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);position: relative;margin-left: 80px;width: 150px;margin-top:10px;}.tomo{background-color: rgba(255,255,255,.4);width: 120px;position: fixed;top: 43px;left: 940px;}.line{height:60px;}.line1{padding:0;}.line1 a img{height:60px;width:60px;}
+@charset "UTF-8";
+
+body {
+	background-color: #F1F1F1;
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-attachment: fixed;
+	background-size: cover;
+	font-size: 95%;
+	color: #505050;
+}
+
+.foot,.main,.links {
+	width: 700px;
+}
+
+.main {
+	padding-top: 35px;
+	margin-right: 310px;
+	margin-left: auto;
+}
+
+.head {
+	margin-top: 35px;
+	position: fixed;
+	right: 170px
+}
+
+.headimg {
+	position: relative;
+	height: 150px;
+	width: 150px;
+}
+
+.foot {
+margin-right: 335px;
+margin-left: auto;
+width: 675px;
+}
+
+.menu {
+	position: relative;
+	width: 150px;
+	margin-top: 10px;
+}
+.page{
+	text-align: center;
+}
+.info {
+	position: relative;
+	width: 150px;
+	margin-top: 10px;
+}
+.foot{
+	text-align:center;
+}
+
+.post {
+	width: 675px;
+	position: relative;
+	bottom: 20%;
+	clear: both;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+.post-content p {
+	margin: 7px 0px 7px 0px;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.head ul {
+	display: block;
+}
+
+.post-data {
+	padding-right: 5px;
+	font-size: 14px;
+	margin-top: 55px;
+	margin-left: 20px;
+}
+
+.post-data span {
+	padding-left: 5px;
+	color: #999;
+}
+
+.post-content {
+	font-size: 100%;
+	line-height: 23px;
+	position: relative;
+	margin: 20px 20px 25px 20px;
+}
+
+a {
+	color: #888;
+}
+
+a,a:visited,h1 a:visited,a:active,#main .selected .actions a,#main .selected .actions a:link,#main .selected .actions a:visited,#help dt
+	{
+	color: rgba(41, 41, 63, 0.7);
+	text-decoration: none
+}
+
+.menu li {
+	font-size: 18px;
+	text-align: right;
+	padding: 3px 5px;
+	margin: 3px 0 4px 0;
+	text-align: right;
+	height: 24px;
+}
+
+.info li {
+	font-size: 18px;
+	text-align: right;
+	padding: 3px 5px;
+	margin: 3px 0 4px 0;
+	text-align: right;
+	height: 24px;
+	color: rgba(41, 41, 63, 0.7)
+}
+
+.alink li {
+	padding: 3px 5px;
+	margin: 3px 0 4px 0;
+	text-align: right;
+}
+
+.info ul {
+	padding-left: 30px;
+}
+
+.post-title {
+	float: left;
+	margin-left: 20px;
+	height: 55px;
+}
+
+.post-author-head {
+	float: right;
+	padding-top: 15px;
+	padding-right: 10px;
+}
+
+.page {
+	margin-bottom: 10px;
+	width: 675px;
+}
+
+.comments {
+	width: 675px;
+	margin-top: 5px;
+	font-size: 90%;
+}
+
+.commentList,.page,.post,.headimg,.menu,.info,.newComment,.linkList,.foot
+	{
+	background: rgba(255, 255, 255, .80);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.commentContent {
+	margin: 0px 1px 5px 1px;
+	word-break: break-all;
+	padding: 5px 2px 10px 5px;
+}
+
+.commentHead {
+	float: left;
+	border-right: 1px solid #E6E3D6;
+	padding: 0px 5px 5px 5px;
+}
+
+.child {
+	padding-left: 45px;
+}
+
+.commentList {
+	margin: 10px 0 10px 0;
+	padding: 5px 5px 0px 2px;
+}
+
+.comment .reply {
+	float: right;
+}
+
+.comment .commentDate {
+	margin-left: 10px;
+	color: #999;
+}
+
+.linkList {
+	margin-left: 245px;
+	width: 675px;
+	height: 220px;
+}
+
+.comment .commentContent {
+	padding-left: 50px;
+	padding-right: 20px;
+	word-break: break-all;
+}
+
+.newComment {
+	padding: 2px 2px 2px 10px;
+}
+
+h2 {
+	display: block;
+	font-size: 1.4em;
+}
+
+img {
+	max-width: 600px;
+	max-height: 1000px;
+	height: auto;
+	width: auto;
+}
+
+.blogroll {
+	padding: 2px 5px 2px 10px;
+}
+
+.links {
+	padding-top: 10px;
+	width: 100px;
+}
+
+.brlink {
+	width: 210px;
+	padding-top: 2px;
+	float: left;
+}
+
+.foot img {
+	vertical-align: middle;
+}
+
+.adwords {
+	margin-left: 245px;
+	width: 91%;
+}
+
+.zan {
+	padding: 2px 5px 2px 10px;
+}
+
+.info {
+	position: relative;
+	width: 150px;
+	margin-top: 10px;
+}
+
+
+
+#hitokoto {
+	width:150px;
+	background: rgba(255, 255, 255, .80);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	position: relative;
+	margin-top: 10px;
+}
+.hi{
+	padding: 3px 5px 3px 5px;
+}
+
+.tomo {
+	opacity: .8;
+}
+
+.alink {
+	background: rgba(255, 255, 255, .80);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	position: relative;
+	width: 150px;
+	margin-top: 10px;
+}
+
+.tomo {
+	background-color: rgba(255, 255, 255, .4);
+	width: 120px;
+	position: fixed;
+	top: 43px;
+	left: 940px;
+}
+
+.line {
+	height: 60px;
+}
+
+.line1 {
+	padding: 0;
+}
+
+.line1 a img {
+	height: 60px;
+	width: 60px;
+}

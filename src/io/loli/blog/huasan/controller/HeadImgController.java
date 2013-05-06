@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HeadImgController {
 	@RequestMapping(value={"/headimg"},method=RequestMethod.GET)
-	public String hash(@RequestParam("email") String email ,Model model){
+	public String hash(@RequestParam("email") String email ,@RequestParam("size") int size,Model model){
 		model.addAttribute("email",MD5Util.hash(email).toLowerCase());
+		model.addAttribute("size",size);
 		return "/headimg";
 	}
 }

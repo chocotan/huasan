@@ -1,14 +1,15 @@
 package io.loli.blog.huasan.controller;
 
+import io.loli.blog.huasan.entity.Admin;
+import io.loli.blog.huasan.entity.Comment;
+import io.loli.blog.huasan.entity.Post;
+import io.loli.blog.huasan.service.AdminService;
+import io.loli.blog.huasan.service.PostService;
+
 import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
-
-import io.loli.blog.huasan.entity.Admin;
-import io.loli.blog.huasan.entity.Post;
-import io.loli.blog.huasan.service.AdminService;
-import io.loli.blog.huasan.service.PostService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,14 +26,14 @@ public class PostController {
 	private PostService postService;
 	@Autowired
 	private AdminService adminService;
-
+	
 	@RequestMapping(value = { "add" }, method = RequestMethod.GET)
 	public String setupAddForm(Model model) {
 		Post post = new Post();
 		model.addAttribute("post", post);
 		return "/post/add";
 	}
-
+	
 	@RequestMapping(value = { "add" }, method = RequestMethod.POST)
 	public String submitAddForm(@ModelAttribute("post") Post post, Model model,
 			HttpSession session) {
@@ -42,13 +43,13 @@ public class PostController {
 		postService.save(post);
 		return "redirect:/index";
 	}
-
+	
 	@RequestMapping(value = { "edit" }, method = RequestMethod.GET)
 	public String setupEditForm(@RequestParam("id") int id, Model model) {
 		model.addAttribute("post", postService.findById(id));
 		return "post/edit";
 	}
-
+	
 	@RequestMapping(value = { "edit" }, method = RequestMethod.POST)
 	public String submitEditForm(@ModelAttribute("post") Post post, Model model) {
 		postService.update(post);
@@ -60,6 +61,12 @@ public class PostController {
 		if (page == 0)
 			page = 1;
 		List<Post> postList = postService.list((page - 1) * 10, 10);
+		for(Post p:postList){
+			p.setContent(p.getContent().replaceAll("\n", "<br/>"));
+			if(p.getContent().contains("<!--more")){
+				p.setContent(p.getContent().substring(0,p.getContent().indexOf("<!--more")));
+			}
+		}
 		model.addAttribute("postList", postList);
 		boolean hasLast = page>1?(postService.list((page-2)*10,10).size()==0?false:true):false;
 		boolean hasNext = postService.list(page*10, 10).size()==0?false:true;
@@ -70,8 +77,19 @@ public class PostController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String post(@RequestParam("id") int id, Model model) {
-		model.addAttribute("post", postService.findById(id));
+		Post post = postService.findById(id);
+		post.setContent(post.getContent().replaceAll("\n", "<br/>"));
+		model.addAttribute("post", post);
+		Comment comment = new Comment();
+		comment.setP_id(post.getId());
+		model.addAttribute("comment",comment);
 		return "/post/post";
+	}
+	
+	@RequestMapping(value={"delete"},method = RequestMethod.GET)
+	public String delete(@RequestParam("id") int id, Model model) {
+		postService.delete(id);
+		return "/index";
 	}
 
 	public PostService getPostService() {

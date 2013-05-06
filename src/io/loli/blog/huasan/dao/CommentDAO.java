@@ -38,5 +38,6 @@ public class CommentDAO extends BaseDaoSupport implements ICommentDAO {
 		return this.getJdbcTemplate().queryForObject(sql, ParameterizedBeanPropertyRowMapper
 				.newInstance(Comment.class),id);
 	}
-
+	
+	
 }

@@ -13,7 +13,7 @@
 	<span class="post-date"><fmt:formatDate value="${post.pubDate}" pattern="yyyy-MM-dd"/></span>
 	<span class="post-comment-count"><fmt:message key="post.commentcount"></fmt:message><c:out value="${post.commentCount}"></c:out></span>
 </div>
-<div class="post-content"><c:out value="${post.content}"></c:out></div>
+<div class="post-content"><c:out value="${post.content}" escapeXml="false"></c:out></div>
 </div>
 </c:forEach>
 </div>

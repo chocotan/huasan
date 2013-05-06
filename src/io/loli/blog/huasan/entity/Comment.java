@@ -1,6 +1,7 @@
 package io.loli.blog.huasan.entity;
 
-import java.util.Date;
+import java.sql.Timestamp;
+
 
 public class Comment {
 	private int id;
@@ -9,7 +10,7 @@ public class Comment {
 	private String email;
 	private String website;
 	private String ip;
-	private Date pubDate;
+	private Timestamp pubDate;
 	private int reply_id;
 	private int p_id;
 
@@ -53,11 +54,11 @@ public class Comment {
 		this.p_id = p_id;
 	}
 
-	public Date getPubDate() {
+	public Timestamp getPubDate() {
 		return pubDate;
 	}
 
-	public void setPubDate(Date pubDate) {
+	public void setPubDate(Timestamp pubDate) {
 		this.pubDate = pubDate;
 	}
 
