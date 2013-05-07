@@ -50,7 +50,7 @@
 	<servlet-mapping>
 		<servlet-name>default</servlet-name>
 		<url-pattern>*.png</url-pattern>
-	</servlet-mapping>   
+	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>huasan</servlet-name>
@@ -74,5 +74,9 @@
 			<taglib-uri>http://java.sun.com/jsp/jstl/functions</taglib-uri>
 			<taglib-location>/META-INF/fn.tld</taglib-location>
 		</taglib>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<trim-directive-whitespaces>true</trim-directive-whitespaces>
+		</jsp-property-group>
 	</jsp-config>
 </web-app>

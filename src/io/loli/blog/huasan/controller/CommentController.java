@@ -8,6 +8,7 @@ import io.loli.util.mail.SimpleMailSender;
 import java.io.UnsupportedEncodingException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -94,11 +95,14 @@ public class CommentController {
 		List<Comment> commentList = commentService.listByPostId(p_id);
 		List<List<Comment>> result = new ArrayList<List<Comment>>();
 		for (Comment comment : commentList) {
+			if(!comment.getWebsite().contains("http://")){
+				comment.setWebsite("http://"+comment.getWebsite());
+			}
 			if (comment.getReply_id() == 0) {
 				result.add(sort(searchComment(comment, commentList)));
 			}
 		}
-		
+		Collections.reverse(result);
 		model.addAttribute("commentListList", result);
 		return "/comment/commentList";
 	}

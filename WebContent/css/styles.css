@@ -16,14 +16,14 @@ body {
 
 .main {
 	padding-top: 35px;
-	margin-right: 310px;
-	margin-left: auto;
+	margin-left: 245px;
+	margin-right: auto;
 }
 
 .head {
 	margin-top: 35px;
 	position: fixed;
-	right: 170px
+	left: 80px;
 }
 
 .headimg {
@@ -33,9 +33,10 @@ body {
 }
 
 .foot {
-margin-right: 335px;
-margin-left: auto;
-width: 675px;
+	margin-left: 245px; margin-right : auto;
+	margin-top:10px;
+	width: 675px;
+	margin-right: auto;
 }
 
 .menu {
@@ -43,16 +44,19 @@ width: 675px;
 	width: 150px;
 	margin-top: 10px;
 }
-.page{
+
+.page {
 	text-align: center;
 }
+
 .info {
 	position: relative;
 	width: 150px;
 	margin-top: 10px;
 }
-.foot{
-	text-align:center;
+
+.foot {
+	text-align: center;
 }
 
 .post {
@@ -257,16 +261,15 @@ img {
 	margin-top: 10px;
 }
 
-
-
 #hitokoto {
-	width:150px;
+	width: 150px;
 	background: rgba(255, 255, 255, .80);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 	position: relative;
 	margin-top: 10px;
 }
-.hi{
+
+.hi {
 	padding: 3px 5px 3px 5px;
 }
 

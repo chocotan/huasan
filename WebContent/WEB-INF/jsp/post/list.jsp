@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <div class="main">
 <div class="posts">
+
 <fmt:setBundle basename="io.loli.blog.huasan.prop.all"/>
 <c:forEach var="post" items="${postList}">
 <div class="post" id="${post.id}">
