@@ -62,8 +62,8 @@ public class PostController {
 			page = 1;
 		List<Post> postList = postService.list((page - 1) * 10, 10);
 		for(Post p:postList){
-		//	if(p.getContent().contains("\n"))
-		//		p.setContent(p.getContent().replaceAll("\n", "<br/>"));
+			if(p.getContent().contains("\n"))
+				p.setContent(p.getContent().replaceAll("\n", "<br/>"));
 			if(p.getContent().contains("<!--readmore")){
 				p.setContent(p.getContent().substring(0,p.getContent().indexOf("<!--readmore")));
 			}
@@ -79,7 +79,7 @@ public class PostController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String post(@RequestParam("id") int id, Model model) {
 		Post post = postService.findById(id);
-	//	post.setContent(post.getContent().replaceAll("\n", "<br/>"));
+		post.setContent(post.getContent().replaceAll("\n", "<br/>"));
 		model.addAttribute("post", post);
 		Comment comment = new Comment();
 		comment.setP_id(post.getId());

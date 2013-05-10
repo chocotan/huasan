@@ -16,14 +16,14 @@ body {
 
 .main {
 	padding-top: 35px;
-	margin-left: 245px;
-	margin-right: auto;
+	margin-left: auto;
+	margin-right: 220px;
 }
 
 .head {
 	margin-top: 35px;
 	position: fixed;
-	left: 80px;
+	right: 80px;
 }
 
 .headimg {
@@ -33,10 +33,12 @@ body {
 }
 
 .foot {
-	margin-left: 245px; margin-right : auto;
-	margin-top:10px;
+	margin-left: auto; 
+	margin-right : 220px;
+	margin-top: 10px;
 	width: 675px;
 	margin-right: auto;
+	margin-right: 220px;
 }
 
 .menu {
