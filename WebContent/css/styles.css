@@ -10,14 +10,14 @@ body {
 	color: #505050;
 }
 
-.foot,.main,.links {
-	width: 700px;
+.foot,.main,.links,.page {
+	width: 675px;
 }
 
-.main {
+.main,.links{
 	padding-top: 35px;
 	margin-left: auto;
-	margin-right: 220px;
+	margin-right: 250px;
 }
 
 .head {
@@ -34,11 +34,9 @@ body {
 
 .foot {
 	margin-left: auto; 
-	margin-right : 220px;
+	margin-right : 250px;
 	margin-top: 10px;
 	width: 675px;
-	margin-right: auto;
-	margin-right: 220px;
 }
 
 .menu {
@@ -62,7 +60,6 @@ body {
 }
 
 .post {
-	width: 675px;
 	position: relative;
 	bottom: 20%;
 	clear: both;
@@ -156,7 +153,6 @@ a,a:visited,h1 a:visited,a:active,#main .selected .actions a,#main .selected .ac
 
 .page {
 	margin-bottom: 10px;
-	width: 675px;
 }
 
 .comments {
@@ -202,8 +198,6 @@ a,a:visited,h1 a:visited,a:active,#main .selected .actions a,#main .selected .ac
 }
 
 .linkList {
-	margin-left: 245px;
-	width: 675px;
 	height: 220px;
 }
 
@@ -235,7 +229,6 @@ img {
 
 .links {
 	padding-top: 10px;
-	width: 100px;
 }
 
 .brlink {

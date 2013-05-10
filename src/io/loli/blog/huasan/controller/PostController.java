@@ -64,8 +64,8 @@ public class PostController {
 		for(Post p:postList){
 			if(p.getContent().contains("\n"))
 				p.setContent(p.getContent().replaceAll("\n", "<br/>"));
-			if(p.getContent().contains("<!--readmore")){
-				p.setContent(p.getContent().substring(0,p.getContent().indexOf("<!--readmore")));
+			if(p.getContent().contains("<!--more")){
+				p.setContent(p.getContent().substring(0,p.getContent().indexOf("<!--more")));
 			}
 		}
 		model.addAttribute("postList", postList);
