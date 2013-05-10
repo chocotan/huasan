@@ -17,17 +17,24 @@
 								id="comment-${comment.id}">
 								<div class="commentHead">
 									<c:import url="/headimg">
-											<c:param name="email">
-												<c:out value="${comment.email}"></c:out>
-											</c:param>
-											<c:param name="size">40</c:param>
-										</c:import>
+										<c:param name="email">
+											<c:out value="${comment.email}"></c:out>
+										</c:param>
+										<c:param name="size">40</c:param>
+									</c:import>
 								</div> <span class="commentAuthor"><a href="${comment.website}"><c:out
-										value="${comment.username}"></c:out></a></span> <span class="commentDate"><fmt:message key="post.author"></fmt:message> <fmt:formatDate
-										value="${comment.pubDate}" pattern="yyyy-MM-dd HH:mm" /></span>
+											value="${comment.username}"></c:out></a></span> <span
+								class="commentDate"><fmt:message key="post.author"></fmt:message>
+									<fmt:formatDate value="${comment.pubDate}"
+										pattern="yyyy-MM-dd HH:mm" /></span>
 								<div class="reply">
-									<c:if test="${sessionScope.admin!=null}"><a href="./comment/delete?id=${comment.id}&p_id=${param.id}"><fmt:message key="comment.delete"></fmt:message></a></c:if>
-									<a href="#newComment" onclick="reply(${comment.id},'${comment.username}');"><fmt:message key="comment.reply"></fmt:message></a>
+									<c:if test="${sessionScope.admin!=null}">
+										<a href="./comment/delete?id=${comment.id}&p_id=${param.id}"><fmt:message
+												key="comment.delete"></fmt:message></a>
+									</c:if>
+									<a href="#newComment"
+										onclick="reply(${comment.id},'${comment.username}');"><fmt:message
+											key="comment.reply"></fmt:message></a>
 								</div>
 								<div class="commentContent" id="commentContent">
 									<c:out value="${comment.content}" escapeXml="false"></c:out>
@@ -40,10 +47,11 @@
 		</c:forEach>
 	</ul>
 	<div class="newComment" id="newComment">
-		<form:form onsubmit="notspam(this);" action="/comment/add" modelAttribute="comment">
-		<input type="hidden" name="p_id" value="${param.id}">
-		<input type="hidden" id="reply_id" name="reply_id" value="0">
-		<input type="hidden" id="spam" name="spam" value="0">
+		<form:form onsubmit="notspam(this);" action="/comment/add"
+			modelAttribute="comment">
+			<input type="hidden" name="p_id" value="${param.id}">
+			<input type="hidden" id="reply_id" name="reply_id" value="0">
+			<input type="hidden" id="spam" name="spam" value="0">
 			<table>
 				<tr>
 					<td><fmt:message key="comment.nickname"></fmt:message></td>
@@ -55,13 +63,18 @@
 				</tr>
 				<tr>
 					<td><fmt:message key="comment.website"></fmt:message></td>
-					<td><form:input path="website"/></td>
+					<td><form:input path="website" /></td>
 				</tr>
-				
+
 				<tr>
 					<td></td>
-					<td><form:textarea id="newCommentContent" path="content" cols="50" rows="7" /></td>
-				<tr><td></td><td><input type="submit" value="<fmt:message key="admin.add.form.submit"/>"></td></tr>
+					<td><form:textarea id="newCommentContent" path="content"
+							cols="50" rows="7" /></td>
+				<tr>
+					<td></td>
+					<td><input type="submit"
+						value="<fmt:message key="admin.add.form.submit"/>"></td>
+				</tr>
 			</table>
 		</form:form>
 	</div>

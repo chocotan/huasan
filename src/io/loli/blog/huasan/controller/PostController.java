@@ -45,15 +45,21 @@ public class PostController {
 	}
 	
 	@RequestMapping(value = { "edit" }, method = RequestMethod.GET)
-	public String setupEditForm(@RequestParam("id") int id, Model model) {
-		model.addAttribute("post", postService.findById(id));
+	public String setupEditForm(@RequestParam("id") int id, Model model ,HttpSession session) {
+		Post post = postService.findById(id);
+		model.addAttribute("post", post);
+		session.setAttribute("post", post);
 		return "post/edit";
 	}
 	
 	@RequestMapping(value = { "edit" }, method = RequestMethod.POST)
-	public String submitEditForm(@ModelAttribute("post") Post post, Model model) {
-		postService.update(post);
-		return "/index";
+	public String submitEditForm(@ModelAttribute("post") Post post, Model model ,HttpSession session) {
+		Post sp = (Post) session.getAttribute("post");
+		sp.setTitle(post.getTitle());
+		sp.setContent(post.getContent());
+		postService.update(sp);
+		session.removeAttribute("post");
+		return "redirect:/index";
 	}
 
 	@RequestMapping(value = { "list" }, method = RequestMethod.GET)
