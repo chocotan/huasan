@@ -69,6 +69,7 @@ public class CommentController {
 	public void send(Comment comment) {
 		ResourceBundle rb = ResourceBundle
 				.getBundle("io.loli.blog.huasan.prop.all");
+		
 		String username = rb.getString("email.username");
 		String password = rb.getString("email.password");
 		String title = rb.getString("email.title");
