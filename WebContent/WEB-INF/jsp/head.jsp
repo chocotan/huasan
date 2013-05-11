@@ -5,8 +5,9 @@
 <%@ page import="io.loli.util.*" %>
 <html>
 <head>
-<title><fmt:setBundle basename="io.loli.blog.huasan.prop.all" />
-	<fmt:message key="blog.title"></fmt:message></title>
+<fmt:setBundle basename="io.loli.blog.huasan.prop.all" />
+<title><c:choose><c:when test="${requestScope.post==null}"><fmt:message key="blog.title"></fmt:message></c:when><c:otherwise><c:out value="${post.title}"></c:out>-<fmt:message key="blog.title"></fmt:message></c:otherwise></c:choose>
+</title>
 <link rel="stylesheet" type="text/css" href="./css/styles.css" />
 <script src="http://api.hitokoto.us/rand?encode=js"></script>
 <link rel="shortcut icon" href="favicon.ico" />
