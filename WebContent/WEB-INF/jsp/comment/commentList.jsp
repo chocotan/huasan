@@ -22,9 +22,9 @@
 											</c:param>
 											<c:param name="size">40</c:param>
 										</c:import>
-								</div> <span class="commentAuthor"><a href="${comment.website}"><c:out
+								</div> <span class="commentAuthor"><a href="${comment.website}" target="_blank"><c:out
 										value="${comment.username}"></c:out></a></span> <span class="commentDate"><fmt:message key="post.author"></fmt:message> <fmt:formatDate
-										value="${comment.pubDate}" pattern="yyyy-MM-dd HH:mm" /></span>
+										value="${comment.pubDate}" pattern="yyyy-MM-dd HH:mm" timeZone="GMT+8"/></span>
 								<div class="reply">
 									<c:if test="${sessionScope.admin!=null}"><a href="./comment/delete?id=${comment.id}&p_id=${param.id}"><fmt:message key="comment.delete"></fmt:message></a></c:if>
 									<a href="#newComment" onclick="reply(${comment.id},'${comment.username}');"><fmt:message key="comment.reply"></fmt:message></a>

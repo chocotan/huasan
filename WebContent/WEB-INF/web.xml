@@ -7,6 +7,11 @@
 	<welcome-file-list>
 		<welcome-file>index</welcome-file>
 	</welcome-file-list>
+	<error-page>
+		<!-- <error-code>404</error-code> -->
+		<location>/WEB-INF/jsp/404.jsp</location>
+	</error-page>
+
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/huasan-servlet.xml</param-value>
@@ -15,7 +20,16 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-
+	<filter>
+		<filter-name>UrlRewriteFilter</filter-name>
+		<filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>UrlRewriteFilter</filter-name>
+		<url-pattern>*.html</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
 
 	<filter>
 		<filter-name>characterEncodingFilter</filter-name>
@@ -51,7 +65,10 @@
 		<servlet-name>default</servlet-name>
 		<url-pattern>*.png</url-pattern>
 	</servlet-mapping>
-
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.ico</url-pattern>
+	</servlet-mapping>
 	<servlet>
 		<servlet-name>huasan</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>

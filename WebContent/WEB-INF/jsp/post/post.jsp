@@ -8,7 +8,7 @@
 <div class="main">
 <div class="posts">
 <div class="post" id="${post.id}">
-<div class="post-title"><h2><a href="post?id=${post.id}"><c:out value="${post.title}"></c:out></a></h2></div>
+<div class="post-title"><h2><a href="${post.id}.html"><c:out value="${post.title}"></c:out></a></h2></div>
 <div class="post-data">
 	<span class="post-author"><c:out value="${post.author_name}"></c:out><fmt:message key="post.author"></fmt:message></span>
 	<span class="post-date"><fmt:formatDate value="${post.pubDate}" pattern="yyyy-MM-dd"/></span>
